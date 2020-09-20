@@ -6,7 +6,7 @@
 
 This repository is an accompaniment to Chandra & Schlaufman (2020, in prep.). The contents are as follows:
 
-- `/paper/` contains all notebooks required to reproduce the results of the paper, minus large files for the atmospheric model grids. These files can be obtained from the PHOENIX website (MPMS stars) and from Simon Blouin (WD stars) respectively. 
+- `/paper/` contains all notebooks required to reproduce the results of the paper, minus large files for the atmospheric model grids. These files can be obtained from the [PHOENIX website (MPMS models)](http://phoenix.astro.physik.uni-goettingen.de/) and from [Simon Blouin (WD models)](https://www.lanl.gov/search-capabilities/profiles/simon-blouin.shtml) respectively. 
 
 -  `classify_mpms.py` contains the code deliverable from our paper - a way for anyone to use our logistic regression classifier to differentiate metal-poor main-sequence stars from white dwarfs on the basis of spectro-photometric observables. 
 
