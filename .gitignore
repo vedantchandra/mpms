@@ -2,3 +2,5 @@
 .ipynb_checkpoints/*
 paper/.ipynb_checkpoints/*
 *.DS_store
+*.pyc
+paper/.DS_Store
