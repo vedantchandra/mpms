@@ -1,1 +1,4 @@
 *.p
+.ipynb_checkpoints/*
+paper/.ipynb_checkpoints/*
+*.DS_store
