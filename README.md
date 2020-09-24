@@ -14,6 +14,8 @@ This repository is an accompaniment to Chandra & Schlaufman (2020, in prep.). Th
 
 - `training_grid.csv` contains our grid of training features, derived from the latest synthetic spectra for MPMS and WD stars. For more details, refer to the paper. The classifier trains itself using this grid when initialized. Others are free to use this grid directly to train their own classification algorithm. 
 
+- `training_grid_dd.csv` contains an alternative grid of training features derived from ~ 1500 real stars from SDSS with reliable *Gaia* parallaxes, and consequently reliable stellar types. We caution that whilst this grid may be preferred by some users for being purely data-driven, it will be quite unreliable for parts of the parameter space that are not covered by the observational data (e.g., very low-temperature stars). 
+
 #### Non-Standard Python Dependancies:
 
 - `lmfit`
