@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/vedantchandra/mpms/blob/master/test_data/spectra.png?raw=true" width="750" />
+</p>
+
 ## Differentiating Metal-Poor Main Sequence Stars from White Dwarfs with Spectro-Photometric Observables
 
 **Tutorial**: [Demo Notebook](https://nbviewer.jupyter.org/github/vedantchandra/mpms/blob/master/0_demo.ipynb)
