@@ -1,6 +1,6 @@
 ## Differentiating Metal-Poor Main Sequence Stars from White Dwarfs with Spectro-Photometric Observables
 
-**Tutorial**: [Demo Notebook](https://dfm.io/nbview/?url=https%3A%2F%2Fgithub.com%2Fvedantchandra%2Fmpms%2Fblob%2Fmaster%2F0_demo.ipynb)
+**Tutorial**: [Demo Notebook](https://nbviewer.jupyter.org/github/vedantchandra/mpms/blob/master/0_demo.ipynb)
 
 **Read the Paper**: [(placeholder link)](https://vedantchandra.com)
 
