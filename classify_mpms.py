@@ -165,20 +165,54 @@ class LineProfiles:
         return balmer_parameters
     
 class LRClassifier:
-    def __init__(self, features = ['ug', 'gr', 'ri', 'iz', 'a_fwhm', 'a_height',
+    def __init__(self, features = ['u', 'g', 'r', 'i', 'z' , 'a_fwhm', 'a_height',
                                                'b_fwhm', 'b_height',
                                                'g_fwhm', 'g_height',
                                                'd_fwhm', 'd_height'], training_grid = 'training_grid.csv'
                   ):
+        
         self.features = features
         
         self.training_grid = pd.read_csv(training_grid)
+        
+        seds = [];
+        balmer_features = [];
+        for feature in features:
+            if '_' not in feature:
+                seds.append(self.training_grid[feature])
+            elif '_' in feature:
+                balmer_features.append(self.training_grid[feature])
+        
+        seds = np.array(seds).T
+        self.balmer_features = np.array(balmer_features).T
+        
+        colors = [];
+        self.ncols = seds.shape[1]
+        for i in range(self.ncols):
+            for j in np.arange(i+1, self.ncols):
+                colors.append(seds[:, i] - seds[:, j])
+
+        self.colors = np.array(colors).T
+        
         self.lr = LogisticRegression(penalty = 'l2', solver = 'saga', max_iter = 1e5)
         
-        selected_grid = np.array(self.training_grid[features])
+        self.all_features = np.hstack((self.colors, self.balmer_features))
+        
+        selected_grid = np.array(self.all_features)
         target = np.array(self.training_grid['is_mpms'])
         
         self.lr.fit(selected_grid, target)
                 
     def classify(self, X):
-        return self.lr.predict_proba(X)[:, 1]
+        
+        seds = X[:, :self.ncols]
+        colors = [];
+        for i in range(self.ncols):
+            for j in np.arange(i+1, self.ncols):
+                colors.append(seds[:, i] - seds[:, j])
+        colors = np.array(colors).T
+        
+        data = np.hstack((colors, X[:, self.ncols:]))
+        
+        
+        return self.lr.predict_proba(data)[:, 1]
