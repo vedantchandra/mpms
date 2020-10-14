@@ -165,7 +165,7 @@ class LineProfiles:
         return balmer_parameters
     
 class LRClassifier:
-    def __init__(self, features = ['u', 'g', 'r', 'i', 'z' , 'a_fwhm', 'a_height',
+    def __init__(self, features = ['Su', 'Sg', 'Sr', 'Si', 'Sz' , 'a_fwhm', 'a_height',
                                                'b_fwhm', 'b_height',
                                                'g_fwhm', 'g_height',
                                                'd_fwhm', 'd_height'], training_grid = 'training_grid.csv'
@@ -196,7 +196,10 @@ class LRClassifier:
         
         self.lr = LogisticRegression(penalty = 'l2', solver = 'saga', max_iter = 1e5)
         
-        self.all_features = np.hstack((self.colors, self.balmer_features))
+        if len(self.balmer_features) > 0:
+            self.all_features = np.hstack((self.colors, self.balmer_features))
+        else: 
+            self.all_features = self.colors
         
         selected_grid = np.array(self.all_features)
         target = np.array(self.training_grid['is_mpms'])
