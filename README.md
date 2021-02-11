@@ -6,9 +6,9 @@
 
 **Tutorial**: [Demo Notebook](https://nbviewer.jupyter.org/github/vedantchandra/mpms/blob/master/0_demo.ipynb)
 
-**Read the Paper**: [(placeholder link)](https://vedantchandra.com)
+**Read the Paper**: [arXiv preprint](https://arxiv.org/abs/2102.05058)
 
-This repository is an accompaniment to Chandra & Schlaufman (2020, in prep.). The contents are as follows:
+This repository is an accompaniment to Chandra & Schlaufman (2020, accepted to AJ). The contents are as follows:
 
 -  `classify_mpms.py` is the software deliverable from our paper - a way for anyone to use our logistic regression classifier to differentiate metal-poor main-sequence stars from white dwarfs on the basis of spectro-photometric observables. It includes a convenience function to compute line summaries of the hydrogen Balmer lines, as well as a main classification function that deploys our logistic regression model. 
 
